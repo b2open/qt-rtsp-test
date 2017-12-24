@@ -1,0 +1,67 @@
+language: c++
+compiler:
+  - gcc
+sudo: required
+dist: trusty
+
+
+# Block branchs
+branches:
+  except:
+  - master
+ 
+# safelist branchs
+branches:
+  only:
+  - qml
+  - widgets
+
+
+notifications:
+  email:
+    recipients:
+        - cleitonrbueno@gmail.com
+
+
+addons:
+  apt:
+    packages:
+      - cmake
+      - g++-4.8
+      - python3
+
+
+before_install:
+  # repo for Qt
+  - sudo add-apt-repository --yes ppa:beineri/opt-qt562-trusty
+  - sudo apt-get -qq update
+  - export QMAKE=/usr/lib/x86_64-linux-gnu/qt5/bin/qmake
+
+
+install:
+  - sudo apt-get -y install qt56base qt56multimedia qt56quickcontrols qt56quickcontrols2 qt56imageformats qt56svg
+  - export CXX="g++-4.8"
+
+
+before_script:
+  # Qt variables
+  - QTDIR="/opt/qt56"
+  - PATH="$QTDIR/bin:$PATH"
+  - source /opt/qt56/bin/qt56-env.sh
+
+  #  Other variables
+  - export LD_LIBRARY_PATH="/usr/local/lib64:/usr/local/lib:$LD_LIBRARY_PATH"
+
+  # cmake build
+  #- cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=/opt/qt56/lib/cmake 
+
+
+script:
+  - if [[ "${COVERITY_SCAN_BRANCH}" == 1 ]];
+      then
+        echo "Don't build on coverty_scan branch.";
+        exit 0;
+    fi
+
+  - qmake
+  - make
