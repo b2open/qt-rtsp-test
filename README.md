@@ -1,5 +1,8 @@
+# Qt-RTSP-Test
+
 ## [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/cleitonbueno/qt-rtsp-test/issues)
-# qt-rtsp-test
+[![Build Status](https://travis-ci.org/cleitonbueno/qt-rtsp-test.svg?branch=widgets)](https://travis-ci.org/cleitonbueno/qt-rtsp-test)
+
 Simple example RTSP in Qt5 using Widgets and QML
 
 
