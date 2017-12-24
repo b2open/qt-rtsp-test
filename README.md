@@ -1,7 +1,8 @@
-## [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/cleitonbueno/qt-rtsp-test/issues)
-# qt-rtsp-test
-Simple example RTSP in Qt5 using QML
+# Qt-RTSP-Test
 
+[![Build Status](https://travis-ci.org/cleitonbueno/qt-rtsp-test.svg?branch=qml)](https://travis-ci.org/cleitonbueno/qt-rtsp-test) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/cleitonbueno/qt-rtsp-test/issues)
+
+Simple example RTSP in Qt5 using QML
 
 > - Qt5 compatible with 5.6 and 5.7.
 
