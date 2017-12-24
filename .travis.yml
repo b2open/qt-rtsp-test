@@ -27,7 +27,7 @@ addons:
   apt:
     packages:
       - cmake
-      - g++-5
+      - g++-4.8
       - python3
 
 
@@ -40,8 +40,7 @@ before_install:
 
 install:
   - sudo apt-get -y install qt56base qt56multimedia qt56quickcontrols qt56quickcontrols2 qt56imageformats qt56svg
-  - export CXX="g++-5"
-  - export CC="gcc-5"
+  - export CXX="g++-4.8"
 
 
 before_script:
